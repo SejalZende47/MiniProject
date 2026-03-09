@@ -205,3 +205,15 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Ignore large data files
+data/raw/*
+data/processed/*
+
+# Ignore python cache and virtual environments
+__pycache__/
+venv/
+.env
+
+# Ignore OS specific files
+.DS_Store
