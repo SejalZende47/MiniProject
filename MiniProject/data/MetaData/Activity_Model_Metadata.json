@@ -1,0 +1,290 @@
+{
+    "model_output_path": "Activity_Model.pkl",
+    "feature_columns": [
+        "acc_mag",
+        "gyro_mag",
+        "jerk",
+        "acc_mean",
+        "acc_std",
+        "gyro_mean",
+        "gyro_std",
+        "jerk_mean",
+        "motion_energy",
+        "energy_short",
+        "energy_long",
+        "energy_trend",
+        "cumulative_load",
+        "instability"
+    ],
+    "target_columns": [
+        "activity",
+        "intensity",
+        "fatigue"
+    ],
+    "training_files_used": [
+        "Walking.csv",
+        "Running.csv",
+        "Rotation.csv",
+        "Rotation Fatigue.csv",
+        "Accelerometer.csv + Gyroscope.csv"
+    ],
+    "total_rows": 47575,
+    "total_features": 14,
+    "test_size": 0.2,
+    "random_state": 42,
+    "evaluation": {
+        "activity": {
+            "accuracy": 0.9512129380053909,
+            "true_distribution": {
+                "rotation": 5565,
+                "stationary": 1855
+            },
+            "pred_distribution": {
+                "rotation": 5203,
+                "stationary": 2217
+            },
+            "confusion_matrix_labels": [
+                "rotation",
+                "stationary"
+            ],
+            "confusion_matrix": [
+                [
+                    5203,
+                    362
+                ],
+                [
+                    0,
+                    1855
+                ]
+            ]
+        },
+        "intensity": {
+            "accuracy": 0.8012129380053908,
+            "true_distribution": {
+                "medium": 4452,
+                "low": 1855,
+                "high": 1113
+            },
+            "pred_distribution": {
+                "medium": 5203,
+                "low": 2217
+            },
+            "confusion_matrix_labels": [
+                "high",
+                "low",
+                "medium"
+            ],
+            "confusion_matrix": [
+                [
+                    0,
+                    0,
+                    1113
+                ],
+                [
+                    0,
+                    1855,
+                    0
+                ],
+                [
+                    0,
+                    362,
+                    4090
+                ]
+            ]
+        },
+        "fatigue": {
+            "accuracy": 1.0,
+            "true_distribution": {
+                "fresh": 7420
+            },
+            "pred_distribution": {
+                "fresh": 7420
+            },
+            "confusion_matrix_labels": [
+                "fresh"
+            ],
+            "confusion_matrix": [
+                [
+                    7420
+                ]
+            ]
+        },
+        "exact_match_accuracy": 0.8012129380053908
+    },
+    "feature_importance": {
+        "activity": [
+            {
+                "feature": "motion_energy",
+                "importance": 0.2398586301770555
+            },
+            {
+                "feature": "gyro_mean",
+                "importance": 0.16785844411577025
+            },
+            {
+                "feature": "acc_mean",
+                "importance": 0.08635254015762456
+            },
+            {
+                "feature": "instability",
+                "importance": 0.08509930397731993
+            },
+            {
+                "feature": "gyro_std",
+                "importance": 0.07979669997654658
+            },
+            {
+                "feature": "acc_mag",
+                "importance": 0.07742353036562778
+            },
+            {
+                "feature": "acc_std",
+                "importance": 0.07487268275836405
+            },
+            {
+                "feature": "energy_short",
+                "importance": 0.06954912442746694
+            },
+            {
+                "feature": "energy_long",
+                "importance": 0.031040244947832137
+            },
+            {
+                "feature": "gyro_mag",
+                "importance": 0.02615730592640413
+            },
+            {
+                "feature": "cumulative_load",
+                "importance": 0.020847751710689297
+            },
+            {
+                "feature": "jerk_mean",
+                "importance": 0.020753715515984664
+            },
+            {
+                "feature": "energy_trend",
+                "importance": 0.017178071090585972
+            },
+            {
+                "feature": "jerk",
+                "importance": 0.0032119548527281398
+            }
+        ],
+        "intensity": [
+            {
+                "feature": "motion_energy",
+                "importance": 0.29981960338585256
+            },
+            {
+                "feature": "gyro_mean",
+                "importance": 0.16043828655609196
+            },
+            {
+                "feature": "energy_short",
+                "importance": 0.1306654378556311
+            },
+            {
+                "feature": "instability",
+                "importance": 0.10574814542454186
+            },
+            {
+                "feature": "energy_long",
+                "importance": 0.05523671727475409
+            },
+            {
+                "feature": "energy_trend",
+                "importance": 0.048058697086021736
+            },
+            {
+                "feature": "acc_mean",
+                "importance": 0.040236867065169546
+            },
+            {
+                "feature": "gyro_std",
+                "importance": 0.038593794521076835
+            },
+            {
+                "feature": "cumulative_load",
+                "importance": 0.031014130392615868
+            },
+            {
+                "feature": "acc_std",
+                "importance": 0.02591685781124655
+            },
+            {
+                "feature": "acc_mag",
+                "importance": 0.024511428254736112
+            },
+            {
+                "feature": "jerk_mean",
+                "importance": 0.020562228902877358
+            },
+            {
+                "feature": "gyro_mag",
+                "importance": 0.017956947804063147
+            },
+            {
+                "feature": "jerk",
+                "importance": 0.0012408576653213945
+            }
+        ],
+        "fatigue": [
+            {
+                "feature": "gyro_mean",
+                "importance": 0.18395833320517974
+            },
+            {
+                "feature": "energy_long",
+                "importance": 0.14520283517488244
+            },
+            {
+                "feature": "cumulative_load",
+                "importance": 0.144522052987932
+            },
+            {
+                "feature": "gyro_std",
+                "importance": 0.09429355142541505
+            },
+            {
+                "feature": "acc_mean",
+                "importance": 0.0838322302771239
+            },
+            {
+                "feature": "acc_mag",
+                "importance": 0.07313017845027217
+            },
+            {
+                "feature": "acc_std",
+                "importance": 0.06597969840502065
+            },
+            {
+                "feature": "energy_trend",
+                "importance": 0.06303390680188521
+            },
+            {
+                "feature": "gyro_mag",
+                "importance": 0.047001282918185026
+            },
+            {
+                "feature": "energy_short",
+                "importance": 0.04458182941127315
+            },
+            {
+                "feature": "motion_energy",
+                "importance": 0.029362547787122353
+            },
+            {
+                "feature": "instability",
+                "importance": 0.01757996669288015
+            },
+            {
+                "feature": "jerk",
+                "importance": 0.005121387239654816
+            },
+            {
+                "feature": "jerk_mean",
+                "importance": 0.0024001992231734103
+            }
+        ]
+    }
+}
